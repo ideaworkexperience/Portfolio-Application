@@ -1,0 +1,16 @@
+%header
+  = haml :nav
+  #login
+    %ul
+      - if signed_in?
+        %li
+          %a(href="/user/#{current_user.id}")
+            = current_user.email
+        %li
+          %a(href='/logout') Logout
+      - else
+        %li  
+          %a(href='/login') Login
+      
+  %h1.clear-fix Portfolio Application
+  

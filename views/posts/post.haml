@@ -1,0 +1,12 @@
+%article.post
+  %h3
+    %a{:href => "/post/#{post.id}"}
+    = post.title
+  %p
+    = post.content
+  %p
+    = "Posted by #{post.author} on #{post.date_created.to_date.to_s}"
+  
+  - if signed_in? && post.author == current_user.email
+    %a(href="/post/#{post.id}/edit") Edit
+  

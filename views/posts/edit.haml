@@ -1,0 +1,3 @@
+%h2 Edit Post
+%form#edit-post-form{:method => 'put', :action => "/post/#{@post.id}", :'accept-charset' => 'utf-8'}
+  = haml :'posts/post_form', :locals => { :post => @post }

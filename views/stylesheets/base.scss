@@ -1,0 +1,15 @@
+html { margin: 0; padding: 0; }
+
+body { margin-top: 10px; }
+
+#centre { width: 700px; margin: 0 auto; }
+
+header nav { float: left; }
+header #login { float: right; }
+header h1 { padding-top: 15px; }
+
+.login-form ul { list-style-type: none; }
+#login ul { list-style-type: none; margin: 0; }
+#login li { float:left; margin-left: 5px; }
+
+.clear-fix { clear: both; }

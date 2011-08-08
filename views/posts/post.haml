@@ -9,4 +9,8 @@
   
   - if signed_in? && post.author == current_user.email
     %a(href="/post/#{post.id}/edit") Edit
+    
+    %form.delete-post-form{:method => 'post', :action => "/post/#{post.id}"}
+      %input{:type => 'hidden', :name => '_method', :value => 'delete'}
+      %input{:id => 'delete_submit', :type => 'submit', :value => 'Delete', :name => 'commit'}
   

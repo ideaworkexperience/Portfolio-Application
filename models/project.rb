@@ -10,4 +10,6 @@ class Project
   property :image_url, String
   property :project_url, String
   property :date_created, DateTime
+  
+  belongs_to :user
 end

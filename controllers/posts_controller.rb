@@ -40,7 +40,7 @@ end
 put '/post/:id' do
   authenticate!
   @post = Post.get(params[:id])
-  if @post.update_attributes(params[:post])
+  if @post.update(params[:post])
     redirect "/post/#{@post.id}"
   else
     haml :'posts/edit'

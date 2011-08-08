@@ -39,7 +39,7 @@ end
 put '/project/:id' do
   authenticate!
   @project = Project.get(params[:id])
-  if @project.update_attributes(params[:project])
+  if @project.update(params[:project])
     redirect "/project/#{@project.id}"
   else
     haml :'projects/edit'

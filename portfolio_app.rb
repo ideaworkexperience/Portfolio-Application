@@ -6,9 +6,11 @@ require 'data_mapper'
 configure do
   require File.join(File.dirname(__FILE__), 'config', 'app_config.rb')
   set :haml, :format => :html5
+  set :public, 'public'
   enable :sessions
   Dir[File.expand_path(File.join(File.dirname(__FILE__),"controllers/*.rb"))].each {|f| require f}
   Dir[File.expand_path(File.join(File.dirname(__FILE__),"models/*.rb"))].each {|f| require f}
+  DataMapper.auto_upgrade!
   DataMapper.finalize
 end
 
